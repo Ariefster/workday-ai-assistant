@@ -11,12 +11,12 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Disclaimer } from "@/components/disclaimer";
 import { runAI } from "@/lib/ai.functions";
 
-export type Field =
-  | { name: string; label: string; type: "text"; placeholder?: string; required?: boolean }
-  | { name: string; label: string; type: "textarea"; placeholder?: string; required?: boolean; rows?: number }
-  | { name: string; label: string; type: "select"; options: string[] };
+export type Field<K extends string = string> =
+  | { name: K; label: string; type: "text"; placeholder?: string; required?: boolean }
+  | { name: K; label: string; type: "textarea"; placeholder?: string; required?: boolean; rows?: number }
+  | { name: K; label: string; type: "select"; options: string[] };
 
-export function ToolPage({
+export function ToolPage<const K extends string>({
   title,
   subtitle,
   icon: Icon,
@@ -27,13 +27,13 @@ export function ToolPage({
   title: string;
   subtitle: string;
   icon: ComponentType<{ className?: string }>;
-  fields: Field[];
+  fields: Field<K>[];
   instructions: string;
-  buildPrompt: (v: Record<string, string>) => string;
+  buildPrompt: (v: Record<K, string>) => string;
 }) {
   const call = useServerFn(runAI);
-  const [values, setValues] = useState<Record<string, string>>(() =>
-    Object.fromEntries(fields.map((f) => [f.name, f.type === "select" ? f.options[0] : ""])),
+  const [values, setValues] = useState<Record<K, string>>(
+    () => Object.fromEntries(fields.map((f) => [f.name, f.type === "select" ? f.options[0] : ""])) as Record<K, string>,
   );
   const [output, setOutput] = useState("");
   const [editing, setEditing] = useState(false);
