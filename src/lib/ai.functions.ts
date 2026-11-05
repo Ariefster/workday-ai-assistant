@@ -6,7 +6,7 @@ type Msg = { role: "user" | "assistant"; content: string };
 const SYSTEM = `You are a professional workplace productivity assistant. Write clear, well-structured, concise output in Markdown. Use headings and bullet lists where helpful. Never invent facts presented as certain; flag assumptions.`;
 
 export const runAI = createServerFn({ method: "POST" })
-  .inputValidator((d: { instructions: string; messages: Msg[] }) => {
+  .validator((d: { instructions: string; messages: Msg[] }) => {
     if (!d || !Array.isArray(d.messages) || d.messages.length === 0) throw new Error("No input");
     const messages = d.messages.slice(-30).map((m) => ({
       role: m.role === "assistant" ? ("assistant" as const) : ("user" as const),
