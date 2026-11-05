@@ -41,7 +41,10 @@ export function ToolPage<const K extends string>({
 
   const generate = async () => {
     const missing = fields.find((f) => f.type !== "select" && f.required && !values[f.name]?.trim());
-    if (missing) return toast.error(`Please fill in "${missing.label}".`);
+    if (missing) {
+      toast.error(`Please fill in "${missing.label}".`);
+      return;
+    }
     setLoading(true);
     try {
       const r = await call({ data: { instructions, messages: [{ role: "user", content: buildPrompt(values) }] } });
