@@ -36,7 +36,9 @@ function Chat() {
   const [editIdx, setEditIdx] = useState<number | null>(null);
   const endRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => endRef.current?.scrollIntoView({ behavior: "smooth" }), [messages, loading]);
+  useEffect(() => {
+    endRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages, loading]);
 
   const send = async (text: string) => {
     if (!text.trim() || loading) return;
