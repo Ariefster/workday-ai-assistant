@@ -1,24 +1,68 @@
-# Workday AI Assistant
+# AI Workplace Productivity Assistant
 
-Build a modern, responsive web application called AI Workplace Productivity Assistant that helps professionals automate workplace tasks using AI. The application should include: Smart Email Generator, Meeting Notes Summarizer, AI Task Planner, AI Research Assistant, AI Chatbot Interface. Requirements: Modern dashboard UI, Sidebar navigation, Responsive design, Structured AI prompts, Editable AI outputs, Responsible AI disclaimer. The design should be clean, modern, and professional, similar to a SaaS platform.
+A modern, responsive frontend-only SaaS dashboard designed to automate repetitive workplace tasks, streamline communications, and enhance daily professional efficiency using advanced generative AI prompts.
 
-This project was built with [Lovable](https://lovable.dev).
+## 🚀 Project Links
+*   **Live Application URL:** https://lovable.app
+*   **GitHub Repository:** https://github.com
 
-## Build with Lovable
+## 🚀 Project Overview
+This application serves as a centralized, single-platform hub for workplace productivity. Built during Week 21 of the AI Skills Acceleration Programme, the platform solves real-world corporate inefficiencies by integrating five core AI-driven modules into one cohesive, user-friendly interface with local browser storage.
 
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/41443121-7d32-4b0a-b9df-3844fa64a1ed).
+## 🌟 Features Implemented
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+### 1. Smart Email Generator
+*   **Purpose:** Generates professional workplace emails based on custom user inputs.
+*   **Tone Selection:** Supports multiple writing tones including Formal, Friendly, and Persuasive.
+*   **Editing:** Allows users to fully edit and copy the generated email directly to their clipboard.
 
-## Development
+### 2. Meeting Notes Summarizer
+*   **Purpose:** Condenses lengthy meeting notes and transcripts into action items.
+*   **Extraction:** Automatically extracts key decisions, deadlines, and action items assigned to specific owners.
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+### 3. AI Task Planner / Scheduler
+*   **Purpose:** Breaks down massive goals into prioritized, structured daily or weekly schedules.
+*   **Prioritization:** Organizes tasks based on urgency and importance.
 
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
-```
+### 4. AI Research Assistant
+*   **Purpose:** Synthesizes dense articles, topics, or web content into concise summaries.
+*   **Insights:** Provides actionable recommendations based on the analyzed material.
+
+### 5. Interactive AI Chatbot
+*   **Purpose:** A responsive workplace assistant that handles ad-hoc text prompts.
+*   **Interface:** Features a conversation-style layout where generated text can be copied or edited.
+
+## 🎨 Dashboard Design
+*   **Layout:** Modern SaaS dashboard layout featuring crisp sidebar navigation.
+*   **Theme:** Clean light-gray, white, and dark color palettes with clear visual hierarchy.
+*   **Responsiveness:** Fully optimized layout for seamless viewing on both desktop and mobile devices.
+
+## 🛠️ Technologies & Tools Used
+*   **Frontend Framework:** React with TypeScript (Vite developer tooling)
+*   **Styling Engine:** Tailwind CSS for modern responsive layout design
+*   **Icon Elements:** Lucide React for consistent user interface icons
+*   **Platform Engine:** Lovable AI for rapid component building and deployment
+*   **Version Control:** GitHub for repository hosting and automated deployment workflows
+
+## 📦 Setup & Installation Instructions
+To run this project locally, ensure you have Node.js and npm installed:
+1. Clone the repository:
+   ```bash
+   git clone https://github.com.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd workday-ai-assistant
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+4. Start the local development server:
+   ```bash
+   npm run dev
+   ```
+
+## ⚖️ Responsible AI Use
+*   **Disclaimer:** Content is AI-generated and may contain errors. Always review and verify factual outputs (names, dates, figures) against reliable sources before sharing with clients or colleagues.
+*   **Data Privacy:** This application runs entirely frontend-only. No user inputs or credentials are saved to external databases; all data stays locally inside your active browser tab.
