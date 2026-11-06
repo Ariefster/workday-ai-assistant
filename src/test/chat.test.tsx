@@ -23,7 +23,7 @@ describe("Chat effect lifecycle", () => {
       const view = render(<StrictMode><Chat /></StrictMode>);
       const input = screen.getByPlaceholderText("Type your message…");
       fireEvent.change(input, { target: { value: "How can I improve team meetings?" } });
-      fireEvent.click(screen.getByRole("button", { name: "Send", exact: true }));
+      fireEvent.click(screen.getByRole("button", { name: /^Send$/ }));
       await screen.findByText("Assign each action item an owner and deadline.");
       expect(callAI).toHaveBeenCalledWith({
         data: {
@@ -32,7 +32,7 @@ describe("Chat effect lifecycle", () => {
         },
       });
       await waitFor(() => expect(scroll).toHaveBeenCalled());
-      fireEvent.click(screen.getByRole("button", { name: "Clear", exact: true }));
+      fireEvent.click(screen.getByRole("button", { name: /^Clear$/ }));
       expect(screen.queryByText("Assign each action item an owner and deadline.")).toBeNull();
       expect(() => view.unmount()).not.toThrow();
     } finally {
